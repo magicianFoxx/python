@@ -18,15 +18,15 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r lab11/requirements.txt  # Путь к файлу requirements.txt в папке lab11
+          pip install -r ../requirements.txt  # Путь к файлу requirements.txt в папке ..
 
       - name: Run tests
         run: |
-          pytest lab11/labs11test.py --junitxml=lab11/report.xml  # Запуск тестов с отчетом в папке lab11
+          pytest ../labs11test.py --junitxml=../report.xml  # Запуск тестов с отчетом в папке ..
         continue-on-error: true
 
       - name: Upload test report
         uses: actions/upload-artifact@v4
         with:
           name: report
-          path: lab11/report.xml  # Путь к отчету в папке lab11
+          path: ../report.xml  # Путь к отчету в папке ..
